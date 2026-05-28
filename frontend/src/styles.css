@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-crown-black text-crown-soft antialiased; }
+  input, select, textarea { @apply bg-white/5 border border-white/10 rounded-2xl px-4 py-3 outline-none transition focus:border-crown-gold/60; }
+}
+
+@layer components {
+  .glass { @apply border border-white/10 bg-white/[0.055] backdrop-blur-xl shadow-2xl; }
+  .gold-gradient { background: linear-gradient(135deg, #f2d28b 0%, #d6a84f 45%, #8f6923 100%); }
+  .page { @apply space-y-6; }
+}
