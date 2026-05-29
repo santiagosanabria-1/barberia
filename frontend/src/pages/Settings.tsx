@@ -26,8 +26,12 @@ export function Settings() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+  const token = localStorage.getItem('token');
+
+  if (token) {
     loadSettings();
-  }, []);
+  }
+}, []);
 
   async function loadSettings() {
     try {
