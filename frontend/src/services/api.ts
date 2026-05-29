@@ -21,3 +21,14 @@ api.interceptors.response.use((response) => response, (error) => {
   if (error.response?.status === 401) useAuthStore.getState().logout(false);
   return Promise.reject(error);
 });
+export const settingsApi = {
+  get: async () => {
+    const { data } = await api.get('/settings');
+    return data;
+  },
+
+  update: async (settings: any) => {
+    const { data } = await api.put('/settings', settings);
+    return data;
+  }
+};
